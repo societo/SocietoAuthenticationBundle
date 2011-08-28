@@ -1,0 +1,19 @@
+{##
+ # SocietoAuthenticationBundle
+ # Copyright (C) 2011 Kousuke Ebihara
+ #
+ # This program is under the EPL/GPL/LGPL triple license.
+ # Please see the Resources/meta/LICENSE file that was distributed with this file.
+ #}
+
+{% extends skin_template_pathResour/meta/('base.html.twig') %}
+
+{% block title %} - Registration{% endblock %}
+
+{% block body %}
+    <h1>Registartion</h1>
+    <form action="{{ path('_registration', {'namespace': namespace}) }}" method="post">
+        {{ form_widget(form) }}
+        <button type="submit">Register</button>
+    </form>
+{% endblock %}
