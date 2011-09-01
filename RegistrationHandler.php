@@ -52,12 +52,23 @@ class RegistrationHandler
         $event = new CreateRegistrationDataEvent($this->em, $this->signUp, $member, $account);
         $this->dispatcher->dispatch('onSocietoRegistrationDataCreate', $event);
 
+        // FIXME: remove setting display name
+        $displayName = '';
+
         foreach ($this->createProfiles($member) as $key => $profile)
         {
+            if ('nickname' === $key) {
+                $displayName = $profile->getValue();
+            }
+
             $this->em->persist($profile);
         }
 
-        $member->setDisplayName($account->getUsername());
+        if ($displayName) {
+            $member->setDisplayName($displayName);
+        } else {
+            $member->setDisplayName($account->getUsername());
+        }
 
         $this->em->persist($member);
         $this->em->persist($account);
