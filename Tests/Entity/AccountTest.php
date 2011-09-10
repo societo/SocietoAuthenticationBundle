@@ -10,7 +10,7 @@ use Societo\AuthenticationBundle\Entity\Account as AccountEntity;
 use Societo\BaseBundle\Entity\Member;
 use Societo\BaseBundle\Test\EntityTestCase;
 
-class Account extends EntityTestCase
+class AccountTest extends EntityTestCase
 {
     public function createTestEntityManager($entityPaths = array())
     {

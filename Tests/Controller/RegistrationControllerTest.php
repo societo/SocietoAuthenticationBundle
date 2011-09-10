@@ -9,7 +9,7 @@ namespace Societo\AuthenticationBundle\Tests\Controller;
 use Societo\BaseBundle\Test\WebTestCase;
 use Societo\AuthenticationBundle\RegistrationEvents;
 
-class RegistrationController extends WebTestCase
+class RegistrationControllerTest extends WebTestCase
 {
     const UNKNOWN_AUTH_PLUGIN_NAME = 'UNKNOWN_AUTH_PLUGIN_NAME';
 
